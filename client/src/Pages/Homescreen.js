@@ -15,7 +15,7 @@ const Homescreen = () => {
     useEffect(() => {
         dispatch(listProducts())
 
-    }, [dispatch])
+    }, [dispatch,listProducts])
 
     return (
         <>

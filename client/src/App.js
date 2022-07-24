@@ -5,6 +5,8 @@ import Homescreen from "./Pages/Homescreen";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ProductScreen from "./Pages/ProductScreen";
 import { CartScreen } from "./Pages/CartScreen";
+import LoginScreen from "./Pages/LoginScreen";
+import RegisterScreen from "./Pages/RegisterScreen";
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
           <main className="py-4">
             <Container>
         <Routes>
-        <Route path="/" element={ <Homescreen/>  } />
+        <Route path="/login" element={ <LoginScreen/> } />
+        <Route path="/register" element={ <RegisterScreen/> } />
         <Route path="/product/:id" element={ <ProductScreen/> } />
         <Route path="/cart/:id" element={ <CartScreen/> } />
+        <Route path="/" element={ <Homescreen/>  } />
         </Routes>
             </Container>
           </main>
