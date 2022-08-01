@@ -1,11 +1,14 @@
 import express from "express";
 const authRouter = express.Router()
-import {authUser,getUserProfile,registerUser} from "../Controllers/userControl.js"
-import {protect} from "../MIddleware/authMiddleware.js"
+import {authUser,deleteUser,getUser,
+    getUserById,getUserProfile,registerUser,
+    updateUser,updateUserProfile} from "../Controllers/userControl.js"
+import {isAdmin, protect} from "../MIddleware/authMiddleware.js"
 
-authRouter.route("/register").post(registerUser)
+authRouter.route("/").post(registerUser).get(protect,isAdmin,getUser)
 authRouter.route("/login").post(authUser)
-authRouter.route("/profile").get(protect,getUserProfile)
-
+authRouter.route("/profile").get(protect,getUserProfile).put(protect,updateUserProfile)
+authRouter.route("/:id").delete(protect,isAdmin,deleteUser).get(protect,isAdmin,getUserById)
+.put(protect,isAdmin,updateUser)
 
 export default authRouter

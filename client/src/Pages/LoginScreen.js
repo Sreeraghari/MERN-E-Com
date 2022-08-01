@@ -14,11 +14,10 @@ const LoginScreen = () => {
     const dispatch=useDispatch()
 
     const userlog=useSelector((state)=>state.userLogin)
-
     const {loading,error,userInfo}=userlog
     
     const redirect = location.search ? location.search.split("=")[1] : '/'
-    console.log("value"+redirect)
+    // console.log("value"+redirect)
 
     useEffect(() => {
         if(userInfo){
@@ -49,7 +48,7 @@ const LoginScreen = () => {
             </Form>
             <Row>
                 <Col>
-                    New Customer?{<Link to={redirect ? `/register/redirect=${redirect}` : `/register`}>Register</Link>}
+                    New Customer?{<Link to={redirect ? `/register/?redirect=${redirect}` : `/register`}>Register</Link>}
                 </Col>
             </Row>
         </FormComponent>

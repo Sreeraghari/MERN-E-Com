@@ -25,11 +25,11 @@ export const CartScreen = () => {
       dispatch(addToCart(id, qty))
     }
 
-  }, [dispatch,addToCart, id, qty])
+  }, [dispatch, id, qty])
 
   const removeFromCart = (id) => dispatch(removeCartItem(id))
 
-  const checkout=()=>navigate("/login?redirect=shipping")
+  const checkout=()=>navigate("/login?redirect=/shipping")
   
   // console.log("location is "+qty)
   return (

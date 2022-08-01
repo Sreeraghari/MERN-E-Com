@@ -48,5 +48,5 @@ const deleteData = async () => {
         process.exit(1)
     }
 }
-// importData()
+importData()
 // deleteData()

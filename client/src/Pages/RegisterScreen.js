@@ -4,7 +4,7 @@ import { Button, Col, Form, FormControl, FormGroup, FormLabel, Row } from 'react
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import FormComponent from '../Components/FormComponent'
-import { login, register } from '../Actions/userAction'
+import { register } from '../Actions/userAction'
 
 const RegisterScreen = () => {
     const [name, setName] = useState('')
@@ -64,7 +64,7 @@ const RegisterScreen = () => {
             </Form>
             <Row>
                 <Col>
-                    Already  Have account?{<Link to={redirect ? `/login/redirect=${redirect}` : `/login`}>Login</Link>}
+                    Already  Have account?{<Link to={redirect ? `/login/?redirect=${redirect}` : `/login`}>Login</Link>}
                 </Col>
             </Row>
         </FormComponent>
